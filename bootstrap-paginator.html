@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>bootstrap分页测试</title>
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <script src="./jquery-1.10.2.min.js"></script>
+  <script src="./bootstrap.min.js"></script>
+  <script src="./bootstrap-paginator.js"></script>
+</head>
+<style>
+  #page li {
+    cursor: pointer;
+  }
+</style>
+<body>
+  <div class="container">
+    <div style="margin-top:100px">
+      <ul id="page" class="pagination">
+        <li class="active"><a data-original-title="" href="">首页</a></li>
+        <li class="active"><a data-original-title="" href="">上一页</a></li>
+        <li class="active"><a data-original-title="" href="">1</a></li>
+        <li><a data-original-title="" href="">2</a></li>
+        <li><a data-original-title="" href="">3</a></li>
+        <li><a data-original-title="" href="">4</a></li>
+        <li><a data-original-title="" href="">5</a></li>
+        <li><a data-original-title="" href="">6</a></li>
+        <li><a data-original-title="" href="">7</a></li>
+        <li><a data-original-title="" href="">8</a></li>
+        <li><a data-original-title="" href="">9</a></li>
+        <li><a data-original-title="" href="">10</a></li>
+        <li><a data-original-title="" href="">下一页</a></li>
+        <li><a data-original-title="" href="">末页</a></li>
+        <li><span><input type="text" value="1" style="width:30px;height:20px"> / 25</span></li>
+        <li><span>跳转</span></li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  $(function () {
+     var currentPage = 1;
+     var totalPages = 25;
+     $("#page").bootstrapPaginator({
+         bootstrapMajorVersion:3, //对应的bootstrap版本
+         currentPage: currentPage, //当前页数
+         numberOfPages: 10, //每次显示页数
+         totalPages:totalPages, //总页数
+         shouldShowPage:true,//是否显示该按钮
+         useBootstrapTooltip:true,
+         
+         //点击事件
+         onPageClicked: function (event, originalEvent, type, page) {
+             
+
+         }
+     });
+  });
+</script>
+
+</html>
